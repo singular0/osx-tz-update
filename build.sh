@@ -1,18 +1,43 @@
 #!/bin/sh
 
 case $1 in
+10.5)
+	OS_VER="10.5"
+	ICU="ICU-8.11.4"
+	DAT="icudt36l.dat"
+	;;
 ""|10.6)
 	OS_VER="10.6"
 	ICU="ICU-400.42"
 	DAT="icudt40l.dat"
 	;;
+10.7)
+	OS_VER="10.7"
+	ICU="ICU-461.18"
+	DAT="icudt46l.dat"
+	;;
+10.8)
+	OS_VER="10.8"
+	ICU="ICU-491.11.3"
+	DAT="icudt49l.dat"
+	;;
+10.9)
+	OS_VER="10.9"
+	ICU="ICU-511.35"
+	DAT="icudt51l.dat"
+	;;
+10.10)
+	OS_VER="10.10"
+	ICU="ICU-531.48"
+	DAT="icudt53l.dat"
+	;;
 *)
-	echo "Unknown OS version specified: '$1'"
+	echo "Unsupported OS version specified: '$1'"
 	exit 1
 	;;
 esac
 
-echo "Building for Mac OS X $OS_VER"
+echo "Building for Mac OS X $OS_VER ($ICU)"
 
 WDIR=`mktemp -d -t tzupdate`
 SDIR=`pwd`

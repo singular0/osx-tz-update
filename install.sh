@@ -3,11 +3,26 @@
 OS_VER=`sw_vers -productVersion | awk -F '.' '{ print $1 "." $2 }'`
 
 case $OS_VER in
+10.5)
+	DAT="icudt36l.dat"
+	;;
 10.6)
 	DAT="icudt40l.dat"
 	;;
+10.7)
+	DAT="icudt46l.dat"
+	;;
+10.8)
+	DAT="icudt49l.dat"
+	;;
+10.9)
+	DAT="icudt51l.dat"
+	;;
+10.10)
+	DAT="icudt53l.dat"
+	;;
 *)
-	echo "Unknown OS version: '$OS_VER'"
+	echo "Unsupported OS version: '$OS_VER'"
 	exit 1
 	;;
 esac
