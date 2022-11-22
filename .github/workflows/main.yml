@@ -1,0 +1,10 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build for Mac OS X 10.6.8
+    runs-on: macos-10.6
+    steps:
+    - name: build
+      run: build.sh
